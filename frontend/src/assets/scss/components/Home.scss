@@ -1,0 +1,31 @@
+.main-page-container {
+  display: flex;
+  align-items: flex-start;
+
+  .dark {
+    width: 50%;
+    background-color: $dark;
+    min-height: 100vh;
+    padding: 0 0 20px 0;
+  }
+
+  .light {
+    width: 50%;
+    background-color: $light;
+    min-height: 100vh;
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: column-reverse;
+
+    .dark,
+    .light {
+      width: 100%;
+      background-color: $dark;
+    }
+
+    .light {
+      min-height: 20vh;
+    }
+  }
+}

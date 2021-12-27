@@ -1,0 +1,119 @@
+.del-account-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 10px;
+  z-index: 10;
+
+  .del-account-container {
+    background-color: $light;
+    width: 450px;
+    padding: 20px;
+    box-shadow: 0 15px 12px -4px $dark;
+    border-radius: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h3 {
+      text-align: center;
+      color: $danger;
+    }
+
+    .btns {
+      display: flex;
+      width: 80%;
+      justify-content: space-between;
+      margin: auto;
+      margin-top: 20px;
+
+      .delete {
+        width: 120px;
+        padding: 5px 0;
+        border-radius: 5px;
+        font-weight: bold;
+        background-color: $danger;
+        color: $light;
+
+        &:hover {
+          background-color: transparent;
+          border-color: $danger-hover;
+          color: $danger-hover;
+        }
+      }
+
+      .cancel {
+        width: 120px;
+        padding: 5px 0;
+        border-radius: 5px;
+        font-weight: bold;
+        background-color: $dark;
+        color: $light;
+
+        &:hover {
+          background-color: transparent;
+          border-color: $darker;
+          color: $darker;
+        }
+      }
+    }
+
+    @media (min-width: 1700px) {
+      width: 850px;
+
+      h3 {
+        font-size: 2.5rem;
+      }
+
+      .btns {
+        width: 80%;
+        margin-top: 60px;
+
+        .delete {
+          width: 250px;
+          padding: 20px 0;
+          border-radius: 10px;
+          font-size: 1.5rem;
+        }
+
+        .cancel {
+          width: 250px;
+          padding: 20px 0;
+          border-radius: 10px;
+          font-size: 1.5rem;
+        }
+      }
+    }
+    @media (max-width: 500px) {
+      width: 200px;
+
+      h3 {
+        font-size: 0.8rem;
+      }
+
+      .btns {
+        width: 100%;
+        margin-top: 20px;
+
+        .delete {
+          width: 60px;
+          padding: 5px 0;
+          border-radius: 5px;
+          font-size: 0.8rem;
+        }
+
+        .cancel {
+          width: 60px;
+          padding: 5px 0;
+          border-radius: 5px;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

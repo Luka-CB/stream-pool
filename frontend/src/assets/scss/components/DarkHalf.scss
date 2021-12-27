@@ -1,0 +1,291 @@
+.main-page-search-form {
+  width: 80%;
+  margin: auto;
+  position: relative;
+
+  form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    input {
+      width: 85%;
+      padding: 10px 0;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      border: 1px solid $primary;
+      text-indent: 10px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      box-shadow: 0 0 5px $primary;
+      color: $light;
+      transition: all 0.3s ease-in-out;
+
+      &:focus {
+        border-color: $primary-hover;
+        box-shadow: 0 0 5px $primary-hover;
+      }
+    }
+
+    .btn {
+      width: 15%;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  }
+
+  @media (min-width: 1700px) {
+    input {
+      padding: 20px 0;
+      font-size: 2rem;
+    }
+
+    .btn {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    input {
+      padding: 5px 0;
+      font-size: 0.6rem;
+    }
+
+    .btn {
+      font-size: 0.8rem;
+      width: 70px;
+    }
+  }
+}
+
+.recently-added {
+  width: 98%;
+  margin: auto;
+  margin-top: 20px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .movies {
+    h4 {
+      color: $light;
+      padding: 10px;
+    }
+
+    .box {
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid $primary;
+      border-bottom: 1px solid $primary;
+      padding: 10px;
+
+      img {
+        width: 100px;
+        height: 140px;
+      }
+
+      .text {
+        background-color: $light;
+        width: 100px;
+        text-align: center;
+        word-wrap: break-word;
+
+        .title {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .rating {
+          display: flex;
+          justify-content: center;
+
+          .avg {
+            margin-right: 5px;
+
+            .fa-star {
+              font-size: 0.7rem;
+              color: $warning;
+            }
+            .avg-num {
+              font-size: 0.6rem;
+            }
+          }
+          .user-rating {
+            display: flex;
+            align-items: center;
+            margin-left: 5px;
+
+            .fa-star {
+              font-size: 0.7rem;
+              color: $danger;
+            }
+            .user-num {
+              font-size: 0.6rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tvs {
+    margin-top: 20px;
+
+    h4 {
+      color: $light;
+      padding: 10px;
+    }
+
+    .box {
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid $primary;
+      border-bottom: 1px solid $primary;
+      padding: 10px;
+
+      img {
+        width: 100px;
+        height: 140px;
+      }
+
+      .text {
+        background-color: $light;
+        width: 100px;
+        text-align: center;
+        word-wrap: break-word;
+
+        .title {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .rating {
+          display: flex;
+          justify-content: center;
+
+          .avg {
+            margin-right: 5px;
+
+            .fa-star {
+              font-size: 0.7rem;
+              color: $warning;
+            }
+            .avg-num {
+              font-size: 0.6rem;
+            }
+          }
+          .user-rating {
+            display: flex;
+            align-items: center;
+            margin-left: 5px;
+
+            .fa-star {
+              font-size: 0.7rem;
+              color: $danger;
+            }
+            .user-num {
+              font-size: 0.6rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1700px) {
+    margin-top: 50px;
+
+    .movies {
+      h3 {
+        font-size: 2rem;
+      }
+
+      .box {
+        img {
+          width: 230px;
+          height: 300px;
+        }
+
+        .text {
+          width: 230px;
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .tvs {
+      margin-top: 50px;
+
+      h3 {
+        font-size: 2rem;
+      }
+
+      .box {
+        img {
+          width: 230px;
+          height: 300px;
+        }
+
+        .text {
+          width: 230px;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    margin-top: 50px;
+
+    .movies {
+      margin-top: 50px;
+    }
+
+    .tvs {
+      margin-top: 50px;
+    }
+  }
+
+  @media (max-width: 530px) {
+    .movies {
+      h3 {
+        font-size: 0.8rem;
+      }
+
+      .box {
+        img {
+          width: 60px;
+          height: 90px;
+        }
+
+        .text {
+          width: 60px;
+          font-size: 0.6rem;
+        }
+      }
+    }
+
+    .tvs {
+      h3 {
+        font-size: 0.8rem;
+      }
+
+      .box {
+        img {
+          width: 60px;
+          height: 90px;
+        }
+
+        .text {
+          width: 60px;
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,526 @@
+.profile-container {
+  width: 90%;
+  margin: auto;
+  min-height: 100vh;
+  min-width: 250px;
+  background-color: rgb(190, 190, 190);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding-bottom: 50px;
+  position: relative;
+
+  .user-info {
+    width: 100%;
+    margin: 50px auto;
+    background-color: $light;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    box-shadow: 0 15px 10px -4px $darker;
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+    transition: 0.3s ease-in-out;
+
+    .profile-pic {
+      border: 10px solid $dark;
+      border-radius: 50%;
+      box-shadow: inset 20px 15px 20px $dark;
+      transition: 0.3s ease-in-out;
+
+      img {
+        width: 250px;
+        transition: 0.3s ease-in-out;
+      }
+    }
+
+    .col-2 {
+      display: flex;
+      width: 70%;
+      justify-content: space-between;
+      transition: 0.3s ease-in-out;
+
+      .info {
+        h2 {
+          text-transform: capitalize;
+          transition: 0.3s ease-in-out;
+
+          span {
+            color: $grey;
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      .config {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 10px;
+        transition: 0.3s ease-in-out;
+
+        .users {
+          margin-bottom: 10px;
+          width: 350px;
+          border: none;
+          outline: none;
+          border: 2px solid $dark;
+          background-color: $dark;
+          padding: 7px 0;
+          color: $light;
+          text-shadow: 1px 1px 2px $darker;
+          font-family: inherit;
+          font-weight: bold;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            background-color: transparent;
+            border-color: $darker;
+            color: $darker;
+            text-shadow: 0px 0px 1px $darker;
+          }
+        }
+
+        .upd-account {
+          margin: 10px 0;
+          width: 350px;
+          border: none;
+          outline: none;
+          border: 2px solid $warning;
+          background-color: $warning;
+          padding: 7px 0;
+          color: $light;
+          text-shadow: 1px 1px 2px $darker;
+          font-family: inherit;
+          font-weight: bold;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            background-color: transparent;
+            border-color: $warning-hover;
+            color: $darker;
+            text-shadow: 0px 0px 1px $darker;
+          }
+        }
+
+        .del-account {
+          margin-top: 10px;
+          width: 350px;
+          border: none;
+          outline: none;
+          border: 2px solid $danger;
+          background-color: $danger;
+          padding: 7px 0;
+          color: $light;
+          text-shadow: 1px 1px 2px $darker;
+          font-family: inherit;
+          font-weight: bold;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            background-color: transparent;
+            border-color: $danger-hover;
+            color: $darker;
+            text-shadow: 0px 0px 1px $darker;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 1700px) {
+      border-top-left-radius: 300px;
+      border-bottom-left-radius: 300px;
+
+      .profile-pic {
+        img {
+          width: 450px;
+        }
+      }
+
+      .col-2 {
+        .info {
+          h2 {
+            font-size: 3rem;
+
+            span {
+              font-size: 1.5rem;
+            }
+          }
+
+          h4 {
+            font-size: 1.5rem;
+          }
+        }
+
+        .config {
+          .users {
+            margin-bottom: 20px;
+            width: 650px;
+            padding: 20px 0;
+            font-size: 2rem;
+            border-radius: 20px;
+          }
+
+          .upd-account {
+            margin: 20px 0;
+            width: 650px;
+            padding: 20px 0;
+            font-size: 2rem;
+            border-radius: 20px;
+          }
+
+          .del-account {
+            margin-top: 20px;
+            width: 650px;
+            padding: 20px 0;
+            font-size: 2rem;
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+    @media (max-width: 1000px) {
+      .col-2 {
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-around;
+
+        .info {
+          padding: 0 10px;
+        }
+      }
+    }
+    @media (max-width: 750px) {
+      .profile-pic {
+        border: 5px solid $dark;
+
+        img {
+          width: 170px;
+        }
+      }
+
+      .col-2 {
+        .config {
+          align-items: flex-end;
+
+          .users,
+          .upd-account,
+          .del-account {
+            width: 250px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+    @media (max-width: 500px) {
+      flex-direction: column;
+      align-items: center;
+      border-radius: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      margin-top: 100px;
+
+      .profile-pic {
+        border: 5px solid $darker;
+        background-color: $grey;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        bottom: 60px;
+
+        img {
+          width: 100px;
+        }
+      }
+
+      .col-2 {
+        position: relative;
+        width: 100%;
+        bottom: 40px;
+        align-items: center;
+
+        .info {
+          text-align: center;
+
+          h2 {
+            font-size: 0.8rem;
+
+            span {
+              font-size: 0.6rem;
+            }
+          }
+
+          h4 {
+            font-size: 0.7rem;
+          }
+        }
+
+        .config {
+          width: 100%;
+          margin-top: 20px;
+          align-items: center;
+
+          .users {
+            margin-bottom: 10px;
+            width: 95%;
+            font-size: 0.8rem;
+            padding: 3px 0;
+          }
+
+          .upd-account {
+            margin-bottom: 10px;
+            width: 95%;
+            font-size: 0.8rem;
+            padding: 3px 0;
+          }
+
+          .del-account {
+            margin-top: 10px;
+            width: 95%;
+            font-size: 0.8rem;
+            padding: 3px 0;
+          }
+        }
+      }
+    }
+  }
+
+  .user-activities {
+    padding: 50px 0;
+    position: relative;
+
+    .rated-items {
+      h2 {
+        padding: 5px;
+        color: $primary;
+        text-shadow: 0 1px 2px $primary-hover;
+      }
+
+      .list {
+        border-top: 1px solid $dark;
+        border-bottom: 1px solid $dark;
+        padding: 20px;
+
+        .items {
+          display: flex;
+          width: 100%;
+          justify-content: space-around;
+
+          .poster {
+            width: 180px;
+            height: 250px;
+            position: relative;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+
+            .ratings {
+              position: absolute;
+              bottom: 0;
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+
+              .avg-rating {
+                background-color: rgba(0, 0, 0, 0.808);
+                padding: 7px 0;
+                width: 70px;
+                text-align: center;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+
+                i {
+                  color: $warning;
+                  font-size: 1.3rem;
+                }
+
+                .num {
+                  margin-left: 5px;
+                  color: $light;
+                }
+              }
+
+              .user-rating {
+                background-color: rgba(0, 0, 0, 0.808);
+                padding: 7px 0;
+                width: 70px;
+                text-align: center;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+
+                i {
+                  color: $danger;
+                  font-size: 1.3rem;
+                }
+
+                .num {
+                  margin-left: 5px;
+                  color: $light;
+                }
+              }
+            }
+          }
+
+          .info {
+            text-align: center;
+
+            h4 {
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+
+        .see-all {
+          margin-top: 20px;
+
+          a {
+            color: rgb(11, 87, 228) !important;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      @media (min-width: 1700px) {
+        h2 {
+          font-size: 3rem;
+          margin: 20px;
+        }
+
+        .list {
+          padding: 40px;
+
+          .items {
+            .poster {
+              width: 270px;
+              height: 380px;
+              margin-left: 20px;
+
+              .ratings {
+                .avg-rating {
+                  padding: 15px 0;
+                  width: 120px;
+
+                  i {
+                    font-size: 2rem;
+                  }
+
+                  .num {
+                    font-size: 1.5rem;
+                  }
+                }
+
+                .user-rating {
+                  padding: 15px 0;
+                  width: 120px;
+
+                  i {
+                    font-size: 2rem;
+                  }
+
+                  .num {
+                    font-size: 1.5rem;
+                  }
+                }
+              }
+            }
+
+            .info {
+              h4 {
+                font-size: 2rem;
+              }
+
+              h6 {
+                font-size: 1.3rem;
+              }
+            }
+          }
+
+          .see-all {
+            a {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+      @media (max-width: 1100px) {
+        .list {
+          border-top: 1px solid $dark;
+          border-bottom: 1px solid $dark;
+          padding: 20px;
+
+          .items {
+            .poster {
+              width: 100px;
+              height: 145px;
+
+              .ratings {
+                .avg-rating {
+                  background-color: $dark;
+                  padding: 5px;
+                  width: 45px;
+                  border-top-right-radius: 10px;
+                  border-bottom-right-radius: 10px;
+
+                  i {
+                    font-size: 0.8rem;
+                  }
+
+                  .num {
+                    font-size: 0.7rem;
+                  }
+                }
+
+                .user-rating {
+                  background-color: $dark;
+                  padding: 5px;
+                  width: 45px;
+                  border-top-left-radius: 10px;
+                  border-bottom-left-radius: 10px;
+
+                  i {
+                    font-size: 0.8rem;
+                  }
+
+                  .num {
+                    font-size: 0.7rem;
+                  }
+                }
+              }
+            }
+
+            .info {
+              h4 {
+                font-size: 0.6rem;
+              }
+
+              h6 {
+                font-size: 0.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .user-lists {
+    margin: 100px 0;
+  }
+}

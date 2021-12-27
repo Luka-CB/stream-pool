@@ -1,0 +1,497 @@
+.detail-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 0 150px 0;
+  position: relative;
+
+  .search {
+    width: 450px;
+    margin: 50px auto;
+    position: relative;
+
+    form {
+      width: 100%;
+      display: flex;
+
+      input {
+        width: 85%;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        padding: 10px 0;
+        text-indent: 10px;
+        border: 1px solid $primary;
+        font-family: inherit;
+        color: $light;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        transition: 0.3s ease-in-out;
+
+        &:focus {
+          border-color: $primary-hover;
+          box-shadow: 0 0 5px $primary-hover;
+        }
+      }
+
+      button {
+        width: 15%;
+        color: $light;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          border-color: $primary-hover;
+          color: $primary;
+        }
+      }
+    }
+
+    @media (min-width: 1700px) {
+      width: 850px;
+
+      form {
+        input {
+          padding: 20px 0;
+          font-size: 1.5rem;
+        }
+
+        button {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    @media (max-width: 500px) {
+      width: 250px;
+
+      form {
+        input {
+          padding: 5px 0;
+          font-size: 0.6rem;
+        }
+
+        button {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+
+  .config-container {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  hr {
+    width: 95%;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+
+  .video-player {
+    width: 650px;
+    height: 350px;
+    background-color: $grey;
+    margin: auto;
+    box-shadow: 0 15px 10px -4px $darker;
+
+    .no-video {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .info {
+        width: 30%;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        .fa-video-slash {
+          font-size: 3rem;
+        }
+
+        hr {
+          margin: 0;
+        }
+      }
+    }
+
+    @media (min-width: 1700px) {
+      width: 1150px;
+      height: 650px;
+      margin-top: 100px;
+    }
+
+    @media (max-width: 700px) {
+      width: 450px;
+      height: 250px;
+    }
+
+    @media (max-width: 500px) {
+      width: 250px;
+      height: 150px;
+    }
+  }
+
+  .info-box {
+    width: 850px;
+    margin: 50px auto;
+    display: flex;
+
+    .col-1 {
+      width: 37%;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      border-right: 1px solid $primary;
+
+      img {
+        width: 250px;
+      }
+
+      .activity {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 150px;
+
+        .star {
+          font-size: 2rem;
+          color: $grey;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+
+          .fill {
+            color: $warning;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+              color: $warning-hover;
+            }
+          }
+
+          &:hover {
+            color: $lighter;
+          }
+        }
+        .w-list {
+          font-size: 2rem;
+          color: $grey;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            color: $lighter;
+          }
+        }
+
+        .config {
+          font-size: 1.5rem;
+          padding: 5px;
+          color: $grey;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            color: $lighter;
+          }
+        }
+      }
+    }
+
+    .col-2 {
+      width: 60%;
+      color: $light;
+      margin-left: 20px;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .rating {
+        width: 40%;
+        display: flex;
+        justify-content: space-around;
+        margin: 5px 0;
+
+        .avg {
+          .fa-star {
+            color: $warning;
+            font-size: 1.3rem;
+            margin-right: 5px;
+          }
+        }
+
+        .user-rating {
+          .fa-star {
+            color: $danger;
+            font-size: 1.3rem;
+            margin-right: 5px;
+          }
+        }
+      }
+
+      h3 {
+        margin-top: 10px;
+        font-size: 1rem;
+      }
+
+      .genres {
+        display: inline-block;
+
+        h5 {
+          margin: 10px;
+        }
+      }
+
+      .votes {
+        span {
+          font-size: 0.7rem;
+          color: $grey;
+        }
+      }
+
+      p {
+        margin-top: 10px;
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (min-width: 1700px) {
+      width: 1500px;
+      margin-top: 200px;
+
+      .col-1 {
+        width: 35%;
+
+        img {
+          width: 450px;
+        }
+
+        .activity {
+          height: 300px;
+
+          .star {
+            font-size: 3rem;
+          }
+          .w-list {
+            font-size: 3rem;
+          }
+          .config {
+            font-size: 3rem;
+          }
+        }
+      }
+
+      .col-2 {
+        text-align: start;
+        margin-left: 20px;
+
+        h1 {
+          font-size: 3rem;
+        }
+
+        h3 {
+          font-size: 2rem;
+        }
+
+        .rating {
+          .avg {
+            .fa-star {
+              font-size: 2rem;
+              margin-right: 10px;
+            }
+
+            .avg-num {
+              font-size: 1.5rem;
+            }
+          }
+
+          .user-rating {
+            .fa-star {
+              font-size: 2rem;
+              margin-right: 10px;
+            }
+
+            .user-num {
+              font-size: 1.5rem;
+            }
+          }
+        }
+
+        .genres {
+          h5 {
+            font-size: 1.5rem;
+          }
+        }
+
+        p {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    @media (max-width: 1000px) {
+      width: 650px;
+
+      .col-1 {
+        width: 30%;
+
+        img {
+          width: 150px;
+        }
+
+        .activity {
+          .star {
+            font-size: 1.5rem;
+          }
+          .w-list {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      .col-2 {
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        h3 {
+          font-size: 1rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    @media (max-width: 800px) {
+      width: 450px;
+
+      .col-1 {
+        img {
+          width: 90px;
+        }
+
+        .activity {
+          .star {
+            font-size: 1rem;
+          }
+          .w-list {
+            font-size: 1rem;
+          }
+          .config {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .col-2 {
+        h1 {
+          font-size: 1rem;
+        }
+
+        h3 {
+          font-size: 0.8rem;
+        }
+
+        .rating {
+          .avg {
+            .fa-star {
+              font-size: 0.8rem;
+              margin-right: 3px;
+            }
+
+            .avg-num {
+              font-size: 0.7rem;
+            }
+          }
+
+          .user-rating {
+            .fa-star {
+              font-size: 0.8rem;
+              margin-right: 3px;
+            }
+
+            .user-num {
+              font-size: 0.7rem;
+            }
+          }
+        }
+
+        .genres {
+          h5 {
+            font-size: 0.6rem;
+          }
+        }
+
+        p {
+          font-size: 0.6rem;
+        }
+      }
+    }
+
+    @media (max-width: 500px) {
+      width: 250px;
+
+      .col-1 {
+        border-right: none;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        img {
+          width: 80px;
+        }
+
+        .activity {
+          flex-direction: row;
+          width: 80px;
+          height: 0;
+          margin-top: 15px;
+          align-items: space-between;
+
+          .star {
+            font-size: 0.8rem;
+          }
+          .w-list {
+            font-size: 0.8rem;
+          }
+          .config {
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      .col-2 {
+        h1 {
+          font-size: 0.8rem;
+        }
+
+        h3 {
+          font-size: 0.6rem;
+        }
+
+        .genres {
+          h5 {
+            font-size: 0.5rem;
+            margin: 3px;
+          }
+        }
+
+        p {
+          font-size: 0.5srem;
+        }
+      }
+    }
+  }
+}

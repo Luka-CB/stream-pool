@@ -1,0 +1,478 @@
+.list-modal-bg {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  .list-modal-container {
+    background-color: $light;
+    width: 450px;
+    height: 250px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 15px 12px -4px $dark;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .lists {
+      width: 80%;
+      margin: auto;
+      height: 180px;
+      display: flex;
+      padding: 10px;
+      flex-direction: column;
+
+      p {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .list {
+        display: flex;
+        margin-top: 7px;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(207, 207, 207);
+        padding: 3px;
+        border-radius: 5px;
+        box-shadow: 1px 3px 5px $grey;
+
+        div {
+          display: flex;
+          align-items: center;
+
+          .fa-folder-plus {
+            font-size: 1.5rem;
+          }
+
+          .fa-folder {
+            font-size: 1.5rem;
+            color: rgb(0, 182, 0);
+          }
+
+          h5 {
+            margin-left: 10px;
+            color: gray;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+              color: $darker;
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .fa-cog {
+          color: gray;
+          transition: 0.3s ease-in-out;
+          cursor: pointer;
+
+          &:hover {
+            color: $darker;
+          }
+        }
+      }
+    }
+
+    hr {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .create-new-list {
+      width: 90%;
+      margin: auto;
+
+      .cr-btn {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        border: 2px solid $grey;
+        width: 150px;
+        padding: 5px 0;
+        border-radius: 5px;
+        color: gray;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          color: $darker;
+          border-color: $dark;
+        }
+      }
+
+      .input {
+        display: flex;
+        align-items: center;
+
+        input {
+          width: 70%;
+          border: none;
+          outline: none;
+          background-color: transparent;
+          border: 1px solid $grey;
+          padding: 5px 0;
+          border-radius: 5px;
+          text-indent: 10px;
+          color: $dark;
+          transition: 0.3s ease-in-out;
+
+          &:focus {
+            border-color: $dark;
+            box-shadow: 1px 2px 3px $grey;
+          }
+        }
+
+        .input-btn {
+          margin-left: 2px;
+          border: none;
+          outline: none;
+          background-color: transparent;
+          border: 1px solid $grey;
+          width: 60px;
+          padding: 5px 0;
+          border-radius: 5px;
+          color: gray;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            color: $darker;
+            border-color: $dark;
+          }
+        }
+
+        .close {
+          border: 1px solid $danger;
+          width: 25px;
+          height: 25px;
+          border-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 5px;
+          font-size: 1.5rem;
+          transition: 0.3s ease-in-out;
+          color: $danger;
+          cursor: pointer;
+
+          &:hover {
+            color: $danger-hover;
+          }
+        }
+      }
+    }
+
+    .list-config-bg {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+
+      .list-config-container {
+        background-color: $light;
+        width: 300px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+        border-radius: 20px;
+        box-shadow: 0 12px 8px -4px $dark;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        input {
+          width: 90%;
+          border: none;
+          outline: none;
+          background-color: transparent;
+          border: 1px solid $grey;
+          padding: 10px 0;
+          border-radius: 5px;
+          text-indent: 10px;
+          color: $dark;
+          transition: 0.3s ease-in-out;
+
+          &:focus {
+            border-color: $dark;
+            box-shadow: 1px 2px 3px $grey;
+          }
+        }
+
+        .btns {
+          width: 90%;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+
+          .update {
+            margin-left: 2px;
+            border: none;
+            outline: none;
+            background-color: $warning;
+            border: 1px solid $grey;
+            color: gray;
+            width: 100px;
+            padding: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+              background-color: transparent;
+              border-color: $dark;
+            }
+          }
+
+          .delete {
+            margin-left: 2px;
+            border: none;
+            outline: none;
+            background-color: $danger;
+            border: 1px solid $grey;
+            color: $dark;
+            width: 100px;
+            padding: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+              background-color: transparent;
+              border-color: $dark;
+            }
+          }
+        }
+      }
+    }
+
+    @media (min-width: 1700px) {
+      width: 850px;
+      height: 450px;
+
+      .lists {
+        margin: 0 auto;
+        height: 350px;
+
+        p {
+          font-size: 2rem;
+        }
+
+        .list {
+          margin-top: 15px;
+          padding: 5px;
+
+          div {
+            .fa-folder-plus {
+              font-size: 3rem;
+            }
+
+            h5 {
+              font-size: 1.5rem;
+            }
+          }
+
+          .fa-cog {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      .create-new-list {
+        .cr-btn {
+          width: 300px;
+          padding: 15px 0;
+          font-size: 1.5rem;
+          border-radius: 15px;
+        }
+
+        .input {
+          input {
+            font-size: 1.5rem;
+            padding: 15px 0;
+            border-radius: 15px;
+          }
+
+          .input-btn {
+            font-size: 1.5rem;
+            margin-left: 10px;
+            width: 100px;
+            padding: 15px 0;
+            border-radius: 15px;
+          }
+
+          .close {
+            width: 55px;
+            height: 55px;
+            border-radius: 15px;
+            margin-left: 10px;
+            font-size: 2.5rem;
+          }
+        }
+      }
+
+      .list-config-bg {
+        .list-config-container {
+          width: 500px;
+
+          input {
+            font-size: 1.5rem;
+            width: 90%;
+            padding: 20px 0;
+            border-radius: 15px;
+          }
+
+          .btns {
+            .update {
+              width: 200px;
+              padding: 10px 0;
+              font-size: 1.5rem;
+              border-radius: 15px;
+            }
+
+            .delete {
+              width: 200px;
+              padding: 10px 0;
+              font-size: 1.5rem;
+              border-radius: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 500px) {
+      width: 250px;
+      height: 250px;
+
+      .lists {
+        width: 90%;
+        transition: 0.3s ease-in-out;
+
+        .list {
+          div {
+            .fa-folder-plus {
+              font-size: 1.2rem;
+            }
+
+            h5 {
+              font-size: 0.7rem;
+            }
+          }
+        }
+      }
+
+      .create-new-list {
+        .cr-btn {
+          border: 1px solid $grey;
+          width: 100px;
+          font-size: 0.7rem;
+        }
+
+        .input {
+          input {
+            font-size: 0.6rem;
+            border: 1px solid $grey;
+          }
+
+          .input-btn {
+            font-size: 0.6rem;
+            width: 50px;
+          }
+
+          .close {
+            width: 20px;
+            height: 20px;
+            font-size: 1.2rem;
+          }
+        }
+      }
+
+      .list-config-bg {
+        .list-config-container {
+          width: 200px;
+
+          input {
+            font-size: 0.7rem;
+            padding: 7px 0;
+          }
+
+          .btns {
+            .update {
+              font-size: 0.7rem;
+              width: 70px;
+              padding: 3px 0;
+            }
+
+            .delete {
+              font-size: 0.7rem;
+              width: 70px;
+              padding: 3px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .not-loggedin {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $light;
+    width: 450px;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 15px 10px -4px $darker;
+
+    a {
+      color: $danger;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        color: $danger-hover;
+        text-decoration: underline;
+      }
+    }
+
+    @media (min-width: 1700px) {
+      width: 650px;
+
+      h3 {
+        font-size: 2rem;
+      }
+
+      a {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      width: 250px;
+      padding: 20px 0;
+
+      h3 {
+        font-size: 0.8rem;
+      }
+
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
+}

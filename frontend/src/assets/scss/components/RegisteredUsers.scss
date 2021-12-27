@@ -1,0 +1,702 @@
+.reg-users-container {
+  background-color: $light;
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+  position: relative;
+
+  .reg-users-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      padding: 10px;
+    }
+
+    .right {
+      display: flex;
+      padding: 10px;
+      align-items: center;
+      width: 60%;
+      justify-content: flex-end;
+
+      .search-user {
+        display: flex;
+        margin-right: 20px;
+        border: 1px solid $dark;
+        align-items: center;
+        justify-content: flex-end;
+        border-radius: 5px;
+        width: 40px;
+        transition: 0.3s ease-in-out;
+
+        input {
+          border: none;
+          outline: none;
+          padding: 7px 0;
+          margin-right: 5px;
+          width: 100%;
+          background-color: transparent;
+          text-indent: 5px;
+          display: none;
+          transition: 0.3s ease-in-out;
+        }
+
+        input::placeholder {
+          font-size: 0.6rem;
+        }
+
+        .search-btn {
+          background-color: $dark;
+          color: $grey;
+          padding: 5px;
+          width: 40px;
+          text-align: center;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            color: $lighter;
+          }
+        }
+      }
+
+      .search-user-large {
+        display: none;
+      }
+
+      .sort-count {
+        display: flex;
+        width: 100px;
+        justify-content: space-between;
+
+        .sort {
+          background-color: $lighter;
+          width: 25px;
+          height: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px;
+          box-shadow: 0 0 3px $dark;
+          cursor: pointer;
+
+          .asc {
+            .fa-long-arrow-alt-up {
+              color: $grey;
+            }
+          }
+          .desc {
+            .fa-long-arrow-alt-down {
+              color: $grey;
+            }
+          }
+        }
+      }
+    }
+
+    @media (min-width: 1700px) {
+      h1 {
+        padding: 20px;
+        font-size: 3rem;
+      }
+
+      .right {
+        padding: 20px;
+        width: 40%;
+        justify-content: space-between;
+
+        .search-user {
+          display: none;
+        }
+
+        .search-user-large {
+          display: block;
+          width: 60%;
+          margin-right: 50px;
+
+          input {
+            border: none;
+            outline: none;
+            background-color: none;
+            border: 2px solid $grey;
+            padding: 20px;
+            width: 100%;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            transition: 0.3s ease-in-out;
+
+            &:focus {
+              border-color: $darker;
+              color: $darker;
+            }
+          }
+        }
+
+        .sort-count {
+          width: 200px;
+
+          .sort {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            font-size: 2rem;
+          }
+
+          .count {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+    @media (max-width: 850px) {
+      h1 {
+        font-size: 1rem;
+      }
+
+      .right {
+        width: 70%;
+      }
+    }
+    @media (max-width: 600px) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .right {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        width: 100%;
+
+        .search-user {
+          margin-right: 0;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .user-list {
+    position: relative;
+    display: flex;
+    width: 90%;
+    min-height: 50vh;
+    margin: auto;
+    justify-content: space-between;
+    padding: 50px 0;
+    transition: 0.3s ease-in-out;
+
+    .ids {
+      text-align: center;
+      transition: 0.3s ease-in-out;
+
+      h4 {
+        border-bottom: 2px solid $dark;
+        padding: 5px 0;
+        transition: 0.3s ease-in-out;
+      }
+
+      .list {
+        margin-top: 50px;
+        border-bottom: 1px solid $grey;
+        padding: 5px;
+        transition: 0.3s ease-in-out;
+      }
+    }
+
+    .names {
+      text-align: center;
+      transition: 0.3s ease-in-out;
+      width: 150px;
+
+      h4 {
+        border-bottom: 2px solid $dark;
+        padding: 5px 0;
+        transition: 0.3s ease-in-out;
+      }
+
+      .list {
+        margin-top: 50px;
+        border-bottom: 1px solid $grey;
+        padding: 5px;
+        transition: 0.3s ease-in-out;
+      }
+    }
+
+    .emails {
+      text-align: center;
+      transition: 0.3s ease-in-out;
+      width: 150px;
+
+      h4 {
+        border-bottom: 2px solid $dark;
+        padding: 5px 0;
+        transition: 0.3s ease-in-out;
+      }
+
+      .list {
+        margin-top: 50px;
+        border-bottom: 1px solid $grey;
+        padding: 5px;
+        transition: 0.3s ease-in-out;
+      }
+    }
+
+    .created-at {
+      text-align: center;
+      transition: 0.3s ease-in-out;
+      width: 150px;
+
+      h4 {
+        border-bottom: 2px solid $dark;
+        padding: 5px 0;
+        transition: 0.3s ease-in-out;
+      }
+
+      .list {
+        margin-top: 50px;
+        border-bottom: 1px solid $grey;
+        padding: 5px;
+        transition: 0.3s ease-in-out;
+      }
+    }
+
+    .is-admin {
+      width: 15%;
+      transition: 0.3s ease-in-out;
+      width: 150px;
+
+      h4 {
+        border-bottom: 2px solid $dark;
+        padding: 5px 0;
+        transition: 0.3s ease-in-out;
+      }
+
+      .list {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+        align-items: center;
+        border-bottom: 1px solid $grey;
+        padding: 5px 0;
+        transition: 0.3s ease-in-out;
+
+        .fa-check {
+          color: $success-hover;
+          transition: 0.3s ease-in-out;
+        }
+
+        .fa-times {
+          color: $danger;
+          transition: 0.3s ease-in-out;
+        }
+
+        .config {
+          width: 70px;
+          display: flex;
+          justify-content: space-between;
+          transition: 0.3s ease-in-out;
+
+          .fa-user-edit {
+            color: $warning;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+              color: $warning-hover;
+            }
+          }
+
+          .fa-user-times {
+            color: $danger;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+              color: $danger-hover;
+            }
+          }
+        }
+      }
+    }
+
+    @media (min-width: 1700px) {
+      .ids {
+        h4 {
+          font-size: 2rem;
+        }
+
+        .list {
+          font-size: 1.5rem;
+        }
+      }
+
+      .names {
+        width: 300px;
+        text-align: center;
+
+        h4 {
+          font-size: 2rem;
+        }
+
+        .list {
+          font-size: 1.5rem;
+        }
+      }
+
+      .emails {
+        width: 300px;
+        text-align: center;
+
+        h4 {
+          font-size: 2rem;
+        }
+
+        .list {
+          font-size: 1.5rem;
+        }
+      }
+
+      .created-at {
+        width: 300px;
+        text-align: center;
+
+        h4 {
+          font-size: 2rem;
+        }
+
+        .list {
+          font-size: 1.5rem;
+        }
+      }
+
+      .is-admin {
+        width: 300px;
+
+        h4 {
+          font-size: 2rem;
+        }
+
+        .list {
+          font-size: 1.5rem;
+
+          .config {
+            width: 100px;
+          }
+        }
+      }
+    }
+    @media (max-width: 850px) {
+      width: 95%;
+
+      .ids {
+        text-align: center;
+
+        h4 {
+          font-size: 0.6rem;
+        }
+
+        .list {
+          font-size: 0.5rem;
+        }
+      }
+
+      .names {
+        text-align: center;
+
+        h4 {
+          font-size: 0.6rem;
+        }
+
+        .list {
+          font-size: 0.5rem;
+        }
+      }
+
+      .emails {
+        text-align: center;
+
+        h4 {
+          font-size: 0.6rem;
+        }
+
+        .list {
+          font-size: 0.5rem;
+        }
+      }
+
+      .created-at {
+        text-align: center;
+
+        h4 {
+          font-size: 0.6rem;
+        }
+
+        .list {
+          font-size: 0.5rem;
+        }
+      }
+
+      .is-admin {
+        width: 15%;
+
+        h4 {
+          font-size: 0.6rem;
+        }
+
+        .list {
+          font-size: 0.5rem;
+
+          .config {
+            width: 30px;
+          }
+        }
+      }
+    }
+    @media (max-width: 500px) {
+      width: 95%;
+
+      .names {
+        display: none;
+      }
+
+      .emails {
+        display: none;
+      }
+
+      .created-at {
+        width: auto;
+      }
+
+      .is-admin {
+        width: auto;
+
+        .list {
+          .config {
+            width: 25px;
+          }
+        }
+      }
+    }
+  }
+
+  .user-pagination {
+    padding: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .first {
+      color: $primary;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        color: $primary-hover;
+      }
+    }
+
+    .first-disabled {
+      color: grey;
+    }
+
+    .pagination-divider {
+      background-color: $grey;
+      height: 20px;
+      width: 3px;
+    }
+
+    .prev {
+      color: $primary;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        color: $primary-hover;
+      }
+    }
+
+    .prev-disabled {
+      color: grey;
+    }
+
+    .next {
+      color: $primary;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        color: $primary-hover;
+      }
+    }
+
+    .next-disabled {
+      color: grey;
+    }
+
+    @media (min-width: 1700px) {
+      width: 500px;
+
+      .first {
+        font-size: 2rem;
+      }
+
+      .first-disabled {
+        font-size: 2rem;
+      }
+
+      .pagination-divider {
+        width: 5px;
+        height: 40px;
+      }
+
+      .prev {
+        font-size: 2rem;
+      }
+
+      .prev-disabled {
+        font-size: 2rem;
+      }
+
+      .page {
+        font-size: 2rem;
+      }
+
+      .next {
+        font-size: 2rem;
+      }
+
+      .next-disabled {
+        font-size: 2rem;
+      }
+    }
+    @media (max-width: 500px) {
+      padding: 50px 10px;
+      width: 100%;
+      justify-content: center;
+
+      .first {
+        margin-right: 10px;
+      }
+
+      .first-disabled {
+        margin-right: 10px;
+      }
+
+      .pagination-divider {
+        margin-right: 10px;
+        width: 2px;
+      }
+
+      .prev {
+        margin-right: 10px;
+      }
+
+      .prev-disabled {
+        margin-right: 10px;
+      }
+
+      .next {
+        margin-left: 10px;
+      }
+
+      .next-disabled {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .delete-user-bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .delete-user-container {
+      background-color: $light;
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 15px 12px -4px $dark;
+      padding: 20px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      p {
+        text-align: center;
+        color: $danger;
+      }
+
+      .btns {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        margin-top: 20px;
+
+        .yes {
+          width: 60px;
+          padding: 5px 0;
+          border-radius: 5px;
+          background-color: $danger;
+          font-weight: bold;
+          color: $lighter;
+
+          &:hover {
+            background-color: transparent;
+            border-color: $danger-hover;
+            color: $danger-hover;
+          }
+        }
+
+        .no {
+          width: 60px;
+          padding: 5px 0;
+          border-radius: 5px;
+          background-color: $dark;
+          font-weight: bold;
+          color: $lighter;
+
+          &:hover {
+            background-color: transparent;
+            border-color: $darker;
+            color: $darker;
+          }
+        }
+      }
+
+      @media (min-width: 1700px) {
+        width: 450px;
+
+        p {
+          font-size: 2.5rem;
+        }
+
+        .btns {
+          margin-top: 40px;
+
+          .yes {
+            width: 150px;
+            padding: 10px 0;
+            border-radius: 10px;
+            font-size: 1.5rem;
+          }
+
+          .no {
+            width: 150px;
+            padding: 10px 0;
+            border-radius: 10px;
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

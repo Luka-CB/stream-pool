@@ -1,0 +1,337 @@
+.result-container {
+  width: 80%;
+  min-width: 250px;
+  min-height: 40vh;
+  margin: 50px auto;
+  background-color: $darker;
+  box-shadow: 2px 2px 8px $darker;
+  padding: 0 10px 20px 10px;
+  position: relative;
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .count {
+      text-align: right;
+      padding: 10px;
+
+      h3 {
+        color: $light;
+
+        small {
+          color: $grey;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+
+  .no-res {
+    color: $danger;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .list {
+    display: flex;
+    margin-top: 20px;
+    background-color: $dark;
+    padding: 10px;
+    border-radius: 20px;
+
+    img {
+      width: 200px;
+      height: 280px;
+    }
+
+    .info {
+      display: flex;
+      margin-left: 10px;
+
+      .col-1 {
+        h2 {
+          color: $light;
+
+          small {
+            color: gray;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .rating {
+          margin-top: 10px;
+          display: flex;
+          width: 150px;
+          justify-content: space-between;
+          align-items: center;
+
+          .avg {
+            .fa-star {
+              color: $warning;
+              font-size: 1.3rem;
+            }
+
+            .avg-num {
+              color: $light;
+              margin-left: 5px;
+            }
+          }
+
+          .user-rating {
+            display: flex;
+
+            .fa-star {
+              color: $danger;
+              font-size: 1.2rem;
+            }
+
+            .user-num {
+              color: $light;
+              margin-left: 5px;
+            }
+          }
+        }
+
+        .genre {
+          color: $grey;
+          display: flex;
+          margin-top: 10px;
+          width: 200px;
+          justify-content: space-between;
+        }
+
+        .desc {
+          color: $grey;
+          font-size: 0.8rem;
+          margin-top: 10px;
+          width: 95%;
+        }
+
+        .desc-mobile {
+          display: none;
+        }
+
+        @media (max-width: 900px) {
+          .desc {
+            display: none;
+          }
+
+          .desc-mobile {
+            display: block;
+            color: $grey;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            width: 95%;
+          }
+        }
+      }
+
+      .col-2 {
+        .type {
+          background-color: $primary;
+          padding: 5px;
+          text-align: center;
+          border-radius: 10px;
+
+          hr {
+            margin: 5px 0;
+          }
+
+          h5 {
+            color: $darker;
+            text-shadow: 0 0 1px $dark;
+            letter-spacing: 0.5px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1700px) {
+    box-shadow: 8px 8px 16px $darker;
+    padding: 0 20px 30px 20px;
+
+    .top {
+      .count {
+        padding: 20px;
+
+        h3 {
+          font-size: 2.5rem;
+
+          small {
+            font-size: 1.7rem;
+          }
+        }
+      }
+    }
+
+    .list {
+      margin-top: 50px;
+      padding: 20px;
+
+      img {
+        width: 450px;
+        height: 650px;
+      }
+
+      .info {
+        margin-left: 20px;
+        align-items: flex-start;
+
+        .col-1 {
+          h2 {
+            font-size: 2.5rem;
+          }
+
+          .rating {
+            width: 200px;
+            margin-top: 15px;
+
+            .avg {
+              .fa-star {
+                font-size: 2rem;
+              }
+
+              .avg-num {
+                font-size: 1.5rem;
+              }
+            }
+
+            .user-rating {
+              .fa-star {
+                font-size: 2rem;
+              }
+
+              .user-num {
+                font-size: 1.5rem;
+              }
+            }
+          }
+
+          .genre {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            width: 300px;
+          }
+
+          .desc {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            width: 90%;
+          }
+        }
+
+        .col-2 {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 5px;
+
+          .type {
+            padding: 3px;
+            border-radius: 3px;
+            padding: 5px 10px;
+
+            span {
+              font-size: 1.8rem;
+            }
+
+            hr {
+              margin: 10px 0;
+            }
+
+            h5 {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 650px) {
+    .list {
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        width: 150px;
+        height: 220px;
+      }
+
+      .info {
+        flex-direction: column;
+
+        .col-1 {
+          h2 {
+            font-size: 0.8rem;
+          }
+
+          .rating {
+            width: 100px;
+            margin-top: 5px;
+
+            .avg {
+              .fa-star {
+                font-size: 0.8rem;
+              }
+
+              .avg-num {
+                font-size: 0.7rem;
+              }
+            }
+
+            .user-rating {
+              .fa-star {
+                font-size: 0.8rem;
+              }
+
+              .user-num {
+                font-size: 0.7rem;
+              }
+            }
+          }
+
+          .genre {
+            font-size: 0.6rem;
+            margin-top: 5px;
+            width: 150px;
+          }
+
+          .desc-mobile {
+            font-size: 0.6rem;
+            margin-top: 5px;
+            width: 100%;
+          }
+        }
+
+        .col-2 {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 5px;
+
+          .type {
+            padding: 3px;
+            border-radius: 3px;
+
+            span {
+              display: none;
+            }
+
+            hr {
+              display: none;
+            }
+
+            h5 {
+            }
+          }
+        }
+      }
+    }
+  }
+}

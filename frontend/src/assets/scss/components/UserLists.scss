@@ -1,0 +1,320 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  h2 {
+    padding: 10px;
+    color: $primary-hover;
+    text-shadow: 0 1px 2px $primary-hover;
+
+    small {
+      color: gray;
+    }
+  }
+
+  .cr-btn {
+    border: 2px solid $dark;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: $dark;
+    color: $light;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $darker;
+      color: $darker;
+    }
+  }
+
+  @media (min-width: 1700px) {
+    h2 {
+      font-size: 3rem;
+    }
+
+    .cr-btn {
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 1.5rem;
+    }
+  }
+  @media (max-width: 500px) {
+    h2 {
+      font-size: 1rem;
+    }
+
+    .cr-btn {
+      font-size: 0.6rem;
+      padding: 3px 7px;
+    }
+  }
+}
+
+.body {
+  width: 90%;
+  margin: auto;
+  min-height: 250px;
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 3em 1em;
+  position: relative;
+
+  .no-list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $danger;
+  }
+
+  .list {
+    background-color: $light;
+    width: 150px;
+    padding-bottom: 10px;
+    box-shadow: 1px 2px 5px gray;
+    cursor: pointer;
+
+    .image {
+      width: 150px;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      i {
+        font-size: 6rem;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .info {
+      text-align: center;
+
+      h4 {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      h6 {
+        color: gray;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  @media (min-width: 1700px) {
+    .no-list {
+      font-size: 2.5rem;
+    }
+
+    .list {
+      width: 400px;
+
+      .image {
+        width: 400px;
+        height: 400px;
+
+        i {
+          font-size: 16rem;
+        }
+      }
+
+      .info {
+        padding: 20px 0;
+
+        h4 {
+          font-size: 2rem;
+        }
+
+        h6 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 500px) {
+    .list {
+      width: 100px;
+      height: 150px;
+
+      .image {
+        width: 100px;
+        height: 100px;
+
+        i {
+          font-size: 5rem;
+        }
+      }
+
+      .info {
+        h4 {
+          font-size: 0.7rem;
+        }
+
+        h6 {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}
+
+.create-list-bg {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  .create-list-container {
+    background-color: $light;
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 15px 12px -4px $dark;
+
+    input {
+      border: none;
+      outline: none;
+      background-color: transparent;
+      border: 1px solid $grey;
+      width: 80%;
+      padding: 10px 0;
+      text-indent: 10px;
+      border-radius: 10px;
+      transition: 0.3s ease-in-out;
+
+      &:focus {
+        border-color: $darker;
+        color: $darker;
+      }
+    }
+
+    .btns {
+      display: flex;
+      width: 90%;
+      justify-content: space-between;
+      margin: auto;
+      margin-top: 20px;
+
+      .cancel {
+        border: none;
+        outline: none;
+        width: 150px;
+        border: 2px solid $dark;
+        padding: 5px 0;
+        font-family: inherit;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: $dark;
+        color: $light;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          background-color: transparent;
+          color: $darker;
+          border-color: $darker;
+        }
+      }
+
+      .create {
+        border: none;
+        outline: none;
+        width: 150px;
+        border: 2px solid $success;
+        padding: 5px 0;
+        font-family: inherit;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: $success-hover;
+        color: $light;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          background-color: transparent;
+          color: $success-hover;
+          border-color: $success-hover;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1700px) {
+    .create-list-container {
+      width: 600px;
+
+      input {
+        font-size: 1.5rem;
+        border: 2px solid $grey;
+        padding: 20px 0;
+        border-radius: 20px;
+      }
+
+      .btns {
+        margin-top: 50px;
+
+        .cancel {
+          font-size: 1.5rem;
+          width: 200px;
+          padding: 10px 0;
+          border-radius: 20px;
+        }
+
+        .create {
+          font-size: 1.5rem;
+          width: 200px;
+          padding: 10px 0;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .create-list-container {
+      width: 200px;
+
+      input {
+        font-size: 0.7rem;
+      }
+
+      .btns {
+        .cancel {
+          width: 80px;
+          border: 1px solid $dark;
+          padding: 3px 0;
+          font-size: 0.7rem;
+        }
+
+        .create {
+          width: 80px;
+          border: 1px solid $success;
+          padding: 3px 0;
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+}

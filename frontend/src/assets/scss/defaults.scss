@@ -1,0 +1,193 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $dark;
+  font-family: $font-primary;
+}
+
+a {
+  text-decoration: none;
+}
+
+.router-link-active {
+  color: $primary !important;
+  font-weight: bold !important;
+}
+
+.err {
+  color: $danger;
+  padding: 10px;
+}
+
+// BUTTONS //
+
+.btn {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-family: inherit;
+}
+
+.btn-outline-light {
+  border: 1px solid $light;
+  color: $light;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    border-color: $lighter;
+    color: $lighter;
+    cursor: pointer;
+  }
+}
+.btn-outline-dark {
+  border: 1px solid $dark;
+  color: $dark;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    border-color: $darker;
+    color: $darker;
+    cursor: pointer;
+  }
+}
+.btn-outline-primary {
+  border: 1px solid $primary;
+  color: $primary;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    border-color: $primary-hover;
+    color: $primary-hover;
+    cursor: pointer;
+  }
+}
+.btn-outline-success {
+  border: 1px solid $success;
+  color: $success;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    border-color: $success-hover;
+    color: $success-hover;
+    cursor: pointer;
+  }
+}
+.btn-outline-danger {
+  border: 1px solid $danger;
+  color: $danger;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    border-color: $danger-hover;
+    color: $danger-hover;
+    cursor: pointer;
+  }
+}
+.btn-outline-warning {
+  border: 1px solid $warning;
+  color: $warning;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    border-color: $warning-hover;
+    color: $warning-hover;
+    cursor: pointer;
+  }
+}
+
+.btn-bg-light {
+  background-color: $light;
+  color: $dark;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $lighter;
+    color: $darker;
+    cursor: pointer;
+  }
+}
+.btn-bg-dark {
+  background-color: $dark;
+  color: $light;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $darker;
+    color: $lighter;
+    cursor: pointer;
+  }
+}
+.btn-bg-primary {
+  background-color: $primary;
+  color: $light;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $primary-hover;
+    color: $lighter;
+    cursor: pointer;
+  }
+}
+.btn-bg-success {
+  background-color: $success;
+  color: $dark;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $success-hover;
+    color: $darker;
+    cursor: pointer;
+  }
+}
+.btn-bg-danger {
+  background-color: $danger;
+  color: $dark;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $danger-hover;
+    color: $darker;
+    cursor: pointer;
+  }
+}
+.btn-bg-warning {
+  background-color: $warning;
+  color: $dark;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $warning-hover;
+    color: $darker;
+    cursor: pointer;
+  }
+}
+
+.btn-s {
+  width: 5%;
+  padding: 5px 0;
+  font-size: 0.5rem;
+}
+.btn-m {
+  width: 10%;
+  padding: 10px 0;
+}
+.btn-l {
+  width: 15%;
+  padding: 15px 0;
+}
+.btn-xl {
+  width: 20%;
+  padding: 20px 0;
+}
+
+.rounded {
+  border-radius: 20px;
+}
+
+.scroll {
+  overflow: scroll;
+}

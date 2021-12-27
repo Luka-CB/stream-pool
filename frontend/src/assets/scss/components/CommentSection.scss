@@ -1,0 +1,255 @@
+.comment-section {
+  width: 98%;
+  min-width: 250px;
+  margin: auto;
+  margin-bottom: 50px;
+  position: relative;
+
+  .col-1 {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(92, 92, 92);
+    padding: 10px;
+
+    textarea {
+      width: 450px;
+      border: 1px solid $primary;
+      outline: none;
+      background-color: transparent;
+      padding: 10px;
+      font-family: inherit;
+      color: $light;
+      border-radius: 10px;
+      border-bottom-right-radius: 0;
+      transition: 0.3s ease-in-out;
+
+      &:focus {
+        border-color: $primary-hover;
+        box-shadow: 0 0 4px $primary-hover;
+      }
+    }
+
+    textarea:disabled {
+      border-color: rgb(63, 6, 63);
+    }
+
+    .comment-btn {
+      border: none;
+      background-color: transparent;
+      width: 150px;
+      margin-top: 10px;
+      padding: 5px 0;
+      font-family: inherit;
+      border: 1px solid $primary;
+      border-radius: 10px;
+      cursor: pointer;
+      border-bottom-right-radius: 0;
+      color: $light;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        border-color: $primary-hover;
+        color: $primary;
+      }
+    }
+
+    .disabled {
+      border: none;
+      background-color: transparent;
+      width: 150px;
+      margin-top: 10px;
+      padding: 5px 0;
+      font-family: inherit;
+      border: 1px solid rgb(63, 6, 63);
+      border-radius: 10px;
+      cursor: initial;
+      border-bottom-right-radius: 0;
+      color: rgb(109, 79, 109);
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  .col-2 {
+    width: 70%;
+    min-height: 200px;
+    margin-top: 20px;
+    border-bottom: 1px solid rgb(104, 104, 104);
+    position: relative;
+    padding-bottom: 50px;
+
+    .no-comments {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $light;
+    }
+
+    .top {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+        border: 1px solid $primary;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .letter {
+          font-size: 2rem;
+          color: $light;
+        }
+      }
+
+      .user {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(92, 92, 92);
+        padding: 3px;
+        margin-left: 10px;
+
+        .info {
+          display: flex;
+          align-items: center;
+
+          .name {
+            color: $light;
+          }
+
+          .date {
+            font-size: 0.6rem;
+            color: rgb(114, 114, 114);
+            margin-left: 10px;
+          }
+        }
+
+        .config {
+          color: rgb(121, 121, 121);
+          font-size: 1.2rem;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            color: $lighter;
+          }
+        }
+      }
+    }
+
+    .comment-text {
+      width: 95%;
+      word-wrap: break-word;
+      margin: auto;
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: $light;
+      letter-spacing: 0.3px;
+      padding: 10px;
+    }
+  }
+
+  @media (min-width: 1700px) {
+    .col-1 {
+      width: 70%;
+
+      textarea {
+        width: 650px;
+        font-size: 1.5rem;
+      }
+
+      button {
+        width: 200px;
+        font-size: 1.2rem;
+        padding: 10px 0;
+      }
+    }
+
+    .col-2 {
+      margin-top: 50px;
+      width: 70%;
+
+      .top {
+        .avatar {
+          width: 80px;
+          height: 80px;
+
+          .letter {
+            font-size: 4rem;
+          }
+        }
+
+        .user {
+          margin-left: 20px;
+
+          .info {
+            .name {
+              font-size: 2rem;
+            }
+
+            .date {
+              font-size: 1.2rem;
+            }
+          }
+
+          .config {
+            font-size: 2.5rem;
+          }
+        }
+      }
+
+      .comment {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .col-1 {
+      textarea {
+        width: 250px;
+        font-size: 0.6rem;
+      }
+
+      button {
+        font-size: 0.6rem;
+      }
+    }
+
+    .col-2 {
+      width: 100%;
+
+      .top {
+        .avatar {
+          width: 40px;
+          height: 40px;
+
+          .letter {
+            font-size: 2rem;
+          }
+        }
+
+        .user {
+          .info {
+            .name {
+              font-size: 0.8rem;
+            }
+          }
+
+          .config {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .comment {
+        font-size: 0.6rem;
+      }
+    }
+  }
+}

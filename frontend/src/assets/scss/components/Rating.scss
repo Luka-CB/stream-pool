@@ -1,0 +1,260 @@
+.rating-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+
+  .rating-container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 200px;
+    background-color: $light;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 15px 12px $dark;
+    border-radius: 20px;
+
+    .rated-val {
+      border: 1px solid $dark;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+
+      .num {
+        font-size: 2.5rem;
+      }
+    }
+
+    .stars {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+
+      label {
+        input {
+          display: none;
+        }
+
+        .star {
+          font-size: 2rem;
+          cursor: pointer;
+          color: $danger-hover;
+        }
+        .star-fill {
+          font-size: 2rem;
+          cursor: pointer;
+          color: $warning;
+        }
+      }
+    }
+
+    .btns {
+      width: 60%;
+      display: flex;
+      justify-content: space-around;
+
+      .rate-btn {
+        width: 100px;
+        border: none;
+        outline: none;
+        padding: 5px 0;
+        font-size: 1rem;
+        border-radius: 10px;
+        background-color: $success;
+        border: 2px solid $success;
+        color: $darker;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+
+      .del-btn {
+        width: 100px;
+        border: none;
+        outline: none;
+        padding: 5px 0;
+        font-size: 1rem;
+        border-radius: 10px;
+        background-color: $danger;
+        border: 2px solid $danger;
+        color: $darker;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+
+      .disabled {
+        width: 100px;
+        border: none;
+        outline: none;
+        padding: 5px 0;
+        font-size: 1rem;
+        border-radius: 10px;
+        background-color: $grey;
+        border: 2px solid $grey;
+        color: gray;
+        font-weight: bold;
+      }
+    }
+
+    @media (min-width: 1700px) {
+      width: 850px;
+      height: 400px;
+
+      .rated-val {
+        width: 120px;
+        height: 120px;
+
+        .num {
+          font-size: 4.5rem;
+        }
+      }
+
+      .stars {
+        label {
+          .star {
+            font-size: 4rem;
+          }
+          .star-fill {
+            font-size: 4rem;
+          }
+        }
+      }
+
+      .btns {
+        .rate-btn {
+          width: 200px;
+          padding: 10px 0;
+          font-size: 2rem;
+        }
+
+        .del-btn {
+          width: 200px;
+          padding: 10px 0;
+          font-size: 2rem;
+        }
+
+        .disabled {
+          width: 200px;
+          padding: 10px 0;
+          font-size: 2rem;
+        }
+      }
+    }
+
+    @media (max-width: 500px) {
+      width: 220px;
+      height: 100px;
+
+      .rated-val {
+        width: 40px;
+        height: 40px;
+        margin-top: 0;
+
+        .num {
+          font-size: 1.5rem;
+        }
+      }
+
+      .stars {
+        label {
+          .star {
+            font-size: 1rem;
+          }
+          .star-fill {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .btns {
+        .rate-btn {
+          width: 50px;
+          padding: 1px 0;
+          font-size: 0.6rem;
+        }
+
+        .del-btn {
+          width: 50px;
+          padding: 1px 0;
+          font-size: 0.6rem;
+        }
+
+        .disabled {
+          width: 50px;
+          padding: 1px 0;
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+
+  .not-loggedin {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $light;
+    width: 450px;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 15px 10px -4px $darker;
+
+    a {
+      color: $danger;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        color: $danger-hover;
+        text-decoration: underline;
+      }
+    }
+
+    @media (min-width: 1700px) {
+      width: 650px;
+
+      h3 {
+        font-size: 2rem;
+      }
+
+      a {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      width: 250px;
+      padding: 20px 0;
+
+      h3 {
+        font-size: 0.8rem;
+      }
+
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
+}
