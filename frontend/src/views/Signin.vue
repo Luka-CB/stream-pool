@@ -5,11 +5,11 @@
       <form @submit.prevent="signInHandler">
           <div class="input-box">
               <label>Email</label>
-              <input type="email" placeholder="Enter Existing Email" v-model="email" required>
+              <input type="email" placeholder="admin@test.com" v-model="email" required>
           </div>
           <div class="input-box">
               <label>Password</label>
-              <input type="password" placeholder="Enter Password" v-model="password" required>
+              <input type="password" placeholder="123456" v-model="password" required>
           </div>
           <div class="err">{{error}}</div>
           <button class="btn btn-outline-primary" type="submit">Sign In</button>

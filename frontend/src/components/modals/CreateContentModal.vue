@@ -48,7 +48,7 @@
                                     <label>Animation</label>
                                 </div>
                                 <div class="box">
-                                    <input type="checkbox" value="Biography" v-model="genreValue">
+                                    <input type="checkbox" value="biography" v-model="genreValue">
                                     <label>Biography</label>
                                 </div>
                                 <div class="box">

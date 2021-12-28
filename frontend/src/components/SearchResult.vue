@@ -27,9 +27,7 @@
         </div>
     </div>
     <div v-show="searchResult && searchResult.length >= 3" class="more">
-        <router-link :to="{name: 'SearchResult', params: {query: query }}">
-            <span class="more-res">See more result</span>
-        </router-link>
+        <span @click="goToResultPageHandler" class="more-res">See more result</span>
     </div>
   </div>
 </template>
@@ -44,7 +42,7 @@ export default {
     name: 'SearchResult',
     components: {Spinner},
     props: ['query'],
-    setup() {
+    setup(props) {
         const store = useStore()
         const router = useRouter()
 
@@ -57,11 +55,17 @@ export default {
             store.commit('HIDE_RESULT_BAR')
         }
 
+        const goToResultPageHandler = () => {
+            router.push({name: 'SearchResult', params: {query: props.query }})
+            store.commit('HIDE_RESULT_BAR')
+        }
+
         return {
             showResult,
             searchResult,
             loading,
-            goToDetailsPageHandler
+            goToDetailsPageHandler,
+            goToResultPageHandler
         }
     }
 
