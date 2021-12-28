@@ -14,6 +14,7 @@
   "author": "luka.C.B",
   "license": "ISC",
   "dependencies": {
+    "@vue/cli-service": "^4.5.15",
     "bcrypt": "^5.0.1",
     "colors": "^1.4.0",
     "concurrently": "^6.4.0",
