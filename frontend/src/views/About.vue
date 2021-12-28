@@ -19,7 +19,7 @@
         <p>
           Code is available
           <a
-            href="https://github.com/Luka-CB/south-park-project"
+            href="https://github.com/Luka-CB/stream-pool"
             target="_blank"
             rel="noreferrer"
           >
