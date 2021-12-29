@@ -1,9 +1,9 @@
 <template>
   <div v-show="showCreate" @click.self="hideCreateModal" class="config-content-bg">
-      <div class="config-content-container">
+      <div class="create-content-container">
           <loader v-if="loading" text="Loading" />
           <h2>Create New {{contentType}}</h2>
-          <form class="form" @submit.prevent="submitHandler">
+          <form class="cr-form" @submit.prevent="submitHandler">
               <div class="col-1">
                 <input type="text" placeholder="Enter Title" v-model="title" required>
                 <input type="text" placeholder="Enter Year" v-model="year" required>

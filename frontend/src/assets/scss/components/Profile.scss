@@ -269,11 +269,15 @@
           margin-top: 20px;
           align-items: center;
 
-          .users {
-            margin-bottom: 10px;
+          a {
             width: 95%;
-            font-size: 0.8rem;
-            padding: 3px 0;
+
+            .users {
+              margin-bottom: 10px;
+              width: 100%;
+              font-size: 0.8rem;
+              padding: 3px 0;
+            }
           }
 
           .upd-account {

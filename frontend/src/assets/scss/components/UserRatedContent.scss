@@ -6,6 +6,10 @@
   position: relative;
   transition: 0.3s ease-in-out;
 
+  @media (max-width: 500px) {
+    width: 95%;
+  }
+
   .urc-header {
     display: flex;
     justify-content: space-between;
@@ -331,6 +335,7 @@
 
           h4 {
             font-size: 0.8rem;
+            text-align: center;
           }
 
           .ratings {

@@ -20,7 +20,7 @@
               </div>
           </div>
           <hr>
-          <div class="form">
+          <div class="conf-form">
               <div class="col-1">
                 <input type="text" placeholder="Enter Title" :value="title" @input="e => title = e.target.value" required>
                 <input type="text" placeholder="Enter Year" :value="year" @input="e => year = e.target.value" required>
