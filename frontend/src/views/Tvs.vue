@@ -58,7 +58,7 @@ export default {
           genre: '',
           year: '',
           sort: '',
-          page: page.value || 1
+          page: page.value || ''
         })
       })
 
