@@ -1,8 +1,8 @@
 <template>
   <div v-show="showResult" @click="e => e.stopPropagation()" class="search-result">
     <span v-if="searchResult && searchResult.length === 0" class="no-res">No Result!</span>
+    <spinner v-if="loading" /> 
     <div class="content">
-        <spinner v-if="loading" />
         <div class="list" v-for="res in searchResult" :key="res._id">
             <img :src="res.posterUrl" :alt="res.title">
             <div class="info">
@@ -36,7 +36,7 @@
 import { computed } from '@vue/reactivity'
 import { useStore } from 'vuex'
 import Spinner from './Spinner.vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 export default {
     name: 'SearchResult',
@@ -44,15 +44,21 @@ export default {
     props: ['query'],
     setup(props) {
         const store = useStore()
+        const route = useRoute()
         const router = useRouter()
 
         const showResult = computed(() => store.getters.showResultBar)
         const searchResult = computed(() => store.getters.getSearchResult) 
         const loading = computed(() => store.getters.getContentLoading)
 
-        const goToDetailsPageHandler = data => {
-            router.push({name: 'Details', params: {type: data.type, id: data.id}})
-            store.commit('HIDE_RESULT_BAR')
+        const goToDetailsPageHandler = async data => {
+            if (route.name === 'Details') {
+                await router.push({name: 'Details', params: {type: data.type, id: data.id}})
+                router.go()
+            } else {
+                await router.push({name: 'Details', params: {type: data.type, id: data.id}})
+                store.commit('HIDE_RESULT_BAR')
+            }
         }
 
         const goToResultPageHandler = () => {

@@ -129,12 +129,26 @@ const getTvs = asyncHandler(async (req, res) => {
 // PUBLIC
 const getSingleContent = asyncHandler(async (req, res) => {
   const { id } = req.params;
+  const { userId } = req.query;
 
   const content = await Content.findById(id);
 
+  let rating;
+  if (userId) {
+    rating = await Rating.findOne({
+      content: id,
+      user: userId,
+    });
+  }
+
   if (!content) throw new Error("Get Single Content Request has Failed!");
 
-  res.status(200).json(content);
+  const data = {
+    ...content._doc,
+    isRated: rating ? true : false,
+  };
+
+  res.status(200).json(data);
 });
 
 // GET CONTENT BY SEARCH QUERY

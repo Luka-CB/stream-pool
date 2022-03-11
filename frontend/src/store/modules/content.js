@@ -169,11 +169,13 @@ const actions = {
       console.log(error.message);
     }
   },
-  async getSingleContent({ commit, state }, id) {
+  async getSingleContent({ commit, state }, options) {
     state.loading = true;
 
     try {
-      const { data } = await axios.get(`/api/content/${id}`);
+      const { data } = await axios.get(
+        `/api/content/${options.contentId}?userId=${options.userId}`
+      );
       if (data) {
         state.loading = false;
         commit("GET_SINGLE_CONTENT", data);

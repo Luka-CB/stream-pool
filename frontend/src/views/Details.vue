@@ -26,7 +26,7 @@
                 <img :src="content.posterUrl" :alt="content.title">
                 <div class="activity">
                     <div class="star" @click="showRating" :title="content.type === 'movie' ? 'Rate This Movie' : 'Rate This Tv Show'">
-                        <i v-if="rate && rate.user === userInfo && userInfo.id" title="Rated" class="fas fa-star fill"></i>
+                        <i v-if="content.isRated" title="Rated" class="fas fa-star fill"></i>
                         <i v-else class="far fa-star"></i>
                     </div>
                     <div @click="showList" class="w-list" :title="content.type === 'movie' ? 'Add This Movie to the List' : 'Add This Tv Show to the List'">
@@ -43,7 +43,7 @@
                 <div class="rating">
                     <div class="avg">
                         <i class="fas fa-star"></i>
-                        <span class="avg-num">{{content.rating.avgRating.toFixed(1)}}</span>
+                        <span class="avg-num">{{content.rating?.avgRating.toFixed(1)}}</span>
                     </div>
                     <div class="user-rating">
                         <i v-if="rate" class="fas fa-star"></i>
@@ -55,7 +55,7 @@
                     <h5>{{genre}}</h5>
                 </div>
                 <div class="votes">
-                    <span>Votes | {{content.rating.count}}</span>
+                    <span>Votes | {{content.rating?.count}}</span>
                 </div>
                 <p>{{content.description}}</p>
             </div>
@@ -132,7 +132,10 @@ export default {
             store.dispatch('getRating', id.value)
         })
 
-        store.dispatch('getSingleContent', id.value) 
+        store.dispatch('getSingleContent', {
+            contentId: id.value,
+            userId: userInfo.value?.id || ''
+        }) 
 
         const queryHandler = (e) => {
             queryText.value = e.target.value

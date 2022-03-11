@@ -24,7 +24,7 @@ const createList = asyncHandler(async (req, res) => {
 const getLists = asyncHandler(async (req, res) => {
   const { userId } = req.query;
 
-  const lists = await List.find({ userId });
+  const lists = await List.find({ userId }).populate("listItems", "contentId");
 
   if (!lists) throw new Error("Get Lists Request has Failed!");
   res.status(200).json(lists);

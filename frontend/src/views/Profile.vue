@@ -189,7 +189,10 @@ export default {
     const showDelModalHandler = () => store.commit('SHOW_DELETE_ACCOUNT', true)
 
     store.dispatch('userProfile')
-    store.dispatch('getLists', userId.value)
+    store.dispatch('getLists', {
+      userId: userId.value,
+      contentId: ''
+    })
 
 
     return {

@@ -29,7 +29,19 @@ const getters = {
 
 const mutations = {
   GET_LISTS(state, data) {
-    state.lists = data;
+    const newLists = data.lists.map((list) => {
+      const contentIds = list.listItems.map((li) => li.contentId);
+
+      let isInList;
+      if (contentIds.includes(data.contentId)) {
+        isInList = true;
+      } else {
+        isInList = false;
+      }
+
+      return { ...list, isInList };
+    });
+    state.lists = newLists;
   },
   GET_LIST(state, data) {
     state.list = data;
@@ -52,14 +64,17 @@ const actions = {
       console.log(error.message);
     }
   },
-  async getLists({ commit, state }, id) {
+  async getLists({ commit, state }, options) {
     state.loading = true;
+    console.log(options.contentId);
 
     try {
-      const { data } = await axios.get(`/api/list/lists?userId=${id}`);
+      const { data } = await axios.get(
+        `/api/list/lists?userId=${options.userId}`
+      );
       if (data) {
         state.loading = false;
-        commit("GET_LISTS", data);
+        commit("GET_LISTS", { lists: data, contentId: options.contentId });
       }
     } catch (error) {
       state.loading = false;

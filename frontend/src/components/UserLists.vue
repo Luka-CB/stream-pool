@@ -25,7 +25,7 @@
                   : list.title
               }}
             </h4>
-            <h6>items | {{ list.listItems.length }}</h6>
+            <h6>items | {{ list.listItems?.length }}</h6>
           </div>
         </router-link>
       </div>
@@ -81,7 +81,10 @@ export default {
       if (success.value) {
         showCreateList.value = false;
         title.value = "";
-        store.dispatch('getLists', props.userId)
+        store.dispatch('getLists', {
+          userId: props.userId,
+          contentId: ''
+        })
       }
     };
 

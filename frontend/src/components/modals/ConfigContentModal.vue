@@ -5,7 +5,7 @@
           <div class="del-content">
               <h3>
                 Delete
-                <span> {{content.title.length > 25 ? content.title.substring(0, 25) + ' ....' : content.title }}</span>
+                <span> {{content?.title.length > 25 ? content?.title.substring(0, 25) + ' ....' : content.title }}</span>
              </h3>
              <small>>>>></small>
              <button @click="showWarning = true">Delete</button>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="genres">
                     <span @click="showGenres = true" class="genre-btn">Pick Genres</span>
-                    <div v-show="genreValue.length > 0" :class="['picked', genreValue.length > 6 && 'scroll']">
+                    <div v-show="genreValue?.length > 0" :class="['picked', genreValue?.length > 6 && 'scroll']">
                         <div v-for="(genre, i) in genreValue" :key="i" class="pill">
                             <span>{{genre}}</span>
                         </div>
@@ -139,12 +139,12 @@
                             </div>
                             <div class="btns">
                                 <span @click="showGenres = false" class="cancel">Cancel</span>
-                                <span @click="getPickedGenres" :class="genreValue.length === 0 ? 'done-disabled' : 'done'">Done</span>
+                                <span @click="getPickedGenres" :class="genreValue?.length === 0 ? 'done-disabled' : 'done'">Done</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-bg-dark" @click="updateHandler">Update "{{content.title.length > 20 ? content.title.substring(0, 20) + ' ....' : content.title}}"</button>
+                <button class="btn btn-bg-dark" @click="updateHandler">Update "{{content?.title.length > 20 ? content?.title.substring(0, 20) + ' ....' : content.title}}"</button>
               </div>
           </div>
       </div>

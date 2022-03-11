@@ -8,9 +8,10 @@
           <div :class="['lists', lists && lists.length > 4 && 'scroll']">
               <p v-if="lists && lists.length === 0">No Lists!</p>
               <div v-else v-for="list in lists" :key="list._id" class="list">
-                  <div>
-                    <i class="fas fa-folder-plus"></i>
-                    <h5 @click="addToListHandler(list._id)">{{list.title}}</h5>
+                  <div :title="list.isInList ? 'View List' : 'Add to List'">
+                    <i v-if="list.isInList" class="fas fa-folder-open"></i>
+                    <i v-else class="fas fa-folder-plus"></i>
+                    <h5 @click="addToListHandler(list._id, list.isInList)">{{list.title}}</h5>
                   </div>
                   <i @click="showConfigHandler(list._id)" class="fas fa-cog"></i>
               </div>
@@ -49,13 +50,16 @@ import { useStore } from 'vuex'
 import SuccessMsg from '../messages/SuccessMsg.vue'
 import ErrorMsg from '../messages/ErrorMsg.vue'
 import Spinner from '../Spinner.vue'
+import { useRoute, useRouter } from 'vue-router'
 
-export default {
+export default { 
     name: 'ListModal',
     components: { SuccessMsg, ErrorMsg, Spinner },
     props: ['contentId', 'title', 'userId'],
     setup(props) {
         const store = useStore()
+        const route = useRoute()
+        const router = useRouter()
 
         const showCreateInput = ref(false)
         const showConfig = ref(false)
@@ -77,14 +81,20 @@ export default {
         const hideListModal = () => store.commit('HIDE_LIST')
         const unsetOverflow = () => hideListModal()
 
-        store.dispatch('getLists', props.userId)
+        store.dispatch('getLists', {
+            userId: props.userId,
+            contentId: computed(() => route.params.id).value
+        })
 
         const createListHandler = async () => {
             await store.dispatch('createList', listName.value)
 
             if (createListSuccess.value) {
                 showCreateInput.value = false
-                store.dispatch('getLists', props.userId)
+                store.dispatch('getLists', {
+                    userId: props.userId,
+                    contentId: computed(() => route.params.id).value
+                })
                 listName.value = ''
             }
         }
@@ -104,7 +114,10 @@ export default {
 
             if (updateListSuccess.value) {
                 showConfig.value = false
-                store.dispatch('getLists', props.userId)
+                store.dispatch('getLists', {
+                    userId: props.userId,
+                    contentId: computed(() => route.params.id).value
+                })
             }
         }
 
@@ -113,20 +126,35 @@ export default {
 
             if (deleteListSuccess.value) {
                 showConfig.value = false
-                store.dispatch('getLists', props.userId)
+                store.dispatch('getLists', {
+                    userId: props.userId,
+                    contentId: computed(() => route.params.id).value
+                })
             }
         }
 
-        const addToListHandler = async id => {
-            await store.dispatch('createListItem', {
-                contentId: props.contentId,
-                listId: id
-            })
+        const addToListHandler = async (id, isInList) => {
+            if (!isInList) {
+                await store.dispatch('createListItem', {
+                    contentId: props.contentId,
+                    listId: id
+                })
 
-            if (addItemSuccess.value || addItemError.value) {
-                setTimeout(() => {
-                    store.commit('HIDE_MSG')
-                }, 2000)
+                if (addItemSuccess.value || addItemError.value) {
+                    setTimeout(() => {
+                        store.commit('HIDE_MSG')
+                    }, 2000)
+
+                    if (addItemSuccess.value) {
+                        store.dispatch('getLists', {
+                            userId: props.userId,
+                            contentId: computed(() => route.params.id).value
+                        })
+                    }
+                }
+            } else {
+                router.push({name: 'ListDetails', params: {id}})
+                hideListModal()
             }
         }
 
